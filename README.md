@@ -1,2 +1,4 @@
-# OSETCoreToBidAdapter
-OSETCoreToBidAdapter
+# OSETCoreToTakuAdapter
+
+OSETCoreToTakuAdapter
+
