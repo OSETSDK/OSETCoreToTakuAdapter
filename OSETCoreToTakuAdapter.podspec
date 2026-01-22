@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "OSETCoreToTakuAdapter"
-  s.version      = "6.6.0.0"
+  s.version      = "6.6.0.3"
   s.summary      = "AdSet广告对接Taku适配器"
   s.description  = <<-DESC
                     OSETSDK 是一个专业的广告聚合SDK，提供高效的广告展示和收益优化功能。

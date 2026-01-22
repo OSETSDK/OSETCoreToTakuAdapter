@@ -36,6 +36,9 @@
     [self.adStatusBridge atOnAdClick:nil];
 
 }
+- (void)bannerDidExposures:(id)banner{
+    [self.adStatusBridge atOnAdShow:nil];
+}
 -(void)dealloc{
 }
 @end
