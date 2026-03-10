@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) OSETNativeCustomEvent *customEvent;
 @property (nonatomic, strong) OSETNativeAd *nativeAd;
+@property (nonatomic, strong) OSETNativeDataAd *nativeDataAd;
 
 @end
 
@@ -32,9 +33,15 @@
         if (rootVC == nil) {
             rootVC = [ATGeneralManage getCurrentViewControllerWithWindow:nil];
         }
-        self.nativeAd = [[OSETNativeAd alloc]initWithSlotId:argument.serverContentDic[@"unit_id"] size:size rootViewController:rootVC];
-        self.nativeAd.delegate = self.customEvent;
-        [self.nativeAd loadAdData];
+        if(argument.serverContentDic[@"isExpressAd"]){
+            self.nativeAd = [[OSETNativeAd alloc]initWithSlotId:argument.serverContentDic[@"unit_id"] size:size rootViewController:rootVC];
+            self.nativeAd.delegate = self.customEvent;
+            [self.nativeAd loadAdData];
+        }else{
+            self.nativeDataAd = [[OSETNativeDataAd alloc]initWithSlotId:argument.serverContentDic[@"unit_id"] size:size rootViewController:rootVC];
+            self.nativeDataAd.delegate = self.customEvent;
+            [self.nativeDataAd loadAdData];
+        }
 
     });
 }

@@ -9,7 +9,7 @@
 #import "OSETCustomAdapterCommonHeader.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OSETNativeCustomEvent :NSObject<OSETNativeAdDelegate>
+@interface OSETNativeCustomEvent :NSObject<OSETNativeAdDelegate,OSETNativeDataAdDelegate,OSETNativeAdRendererDelegate>
 
 @property (nonatomic,strong) ATNativeAdStatusBridge *adStatusBridge;
 

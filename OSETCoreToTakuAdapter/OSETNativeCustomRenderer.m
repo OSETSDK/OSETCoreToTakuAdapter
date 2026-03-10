@@ -31,7 +31,7 @@
         [self templateRender];
         return;
     }
-//    [self slefRenderRenderClickableViews:clickableViews withContainer:container registerArgument:registerArgument];
+    [self slefRenderRenderClickableViews:clickableViews withContainer:container registerArgument:registerArgument];
 }
 #pragma mark - 模板
 - (void)templateRender {
@@ -41,4 +41,30 @@
     }
     self.feedAdModel.viewController = rootVC;
 }
+#pragma mark - 自渲染
+- (void)slefRenderRenderClickableViews:(NSArray<UIView *> *)clickableViews withContainer:(UIView *)container registerArgument:(ATNativeRegisterArgument *)registerArgument {
+    
+    UIViewController *rootVC = self.configuration.rootViewController;
+    if (rootVC == nil) {
+        rootVC = [ATGeneralManage getCurrentViewControllerWithWindow:nil];
+    }
+    self.feedDataAdModel.viewController = rootVC;
+    [self.renderer registerContainerView:container withDataObject:self.dataAdObject];
+    [self.renderer registerClickableViews:clickableViews];
+    [self.renderer registerCloseView:registerArgument.dislikeButton];
+    
+//    [self.feedAdMetaad setMetaLogoFrame:self.configuration.logoViewFrame];
+//    
+//    if ([self getMSFeedVideoView] && self.feedAdMetaad) {
+//        [[self getMSFeedVideoView] registerDataObject:self.feedAdMetaad
+//                            clickableViews:clickableViews];
+//    }
+//    
+//    [self.feedAdMetaad attachAd:container renderViews:container.subviews clickView:clickableViews closeView:registerArgument.dislikeButton presentVc:rootVC];
+}
+
+//- (MSFeedVideoView *)getMSFeedVideoView {
+//    return (MSFeedVideoView *)self.mediaView;
+//}
+
 @end

@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface OSETNativeCustomRenderer : ATCustomNetworkNativeAd
 
 @property (nonatomic, strong) OSETNativeAd *feedAdModel;
+@property (nonatomic, strong) OSETNativeDataAd *feedDataAdModel;
+@property (nonatomic, strong) OSETNativeDataAdObject * dataAdObject;
+@property (nonatomic, strong) OSETNativeAdRenderer *renderer;
 
 @end
 
