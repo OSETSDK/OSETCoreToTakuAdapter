@@ -75,7 +75,7 @@
         if(nativeAdData.buttonText && [nativeAdData.buttonText isKindOfClass:[NSString class]] && nativeAdData.buttonText.length > 0){
             nativeObject.ctaText = nativeAdData.buttonText;
         }else{
-            nativeObject.ctaText = @"查看详情";
+            nativeObject.ctaText = @"";
         }
         nativeObject.appPrice = [NSString stringWithFormat:@"%ld",(long)nativeAdData.eCPM];
         nativeObject.logoUrl = nativeAdData.adIconUrl;
